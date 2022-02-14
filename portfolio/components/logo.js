@@ -5,16 +5,12 @@ import styled from "@emotion/styled";
 
 const LogoBox = styled.span`
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   display: inline-flex;
   align-items: center;
-  height: 30px;
+  height: 50px;
   line-height: 20px;
   padding: 10px;
-
-  &hover img {
-    transform: rotate(360deg);
-  }
 `;
 
 const Logo = () => {
@@ -23,6 +19,7 @@ const Logo = () => {
     "_black",
     "_white"
   )}.png`;
+
   return (
     <Link href="/">
       <a>
@@ -30,12 +27,9 @@ const Logo = () => {
           <Image
             src={konLogo}
             alt="Konstantin Boguev logo"
-            width="20"
-            height="20"
+            width="50"
+            height="50"
           />
-          <Text color={useColorModeValue("black", "white")}>
-            Konstantin Boguev
-          </Text>
         </LogoBox>
       </a>
     </Link>

@@ -4,29 +4,19 @@ import {
   Container,
   Box,
   Link,
-  Stack,
-  Heading,
+  HStack,
   Flex,
-  Menu,
-  MenuItem,
-  MenuList,
-  MenuButton,
   IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 const LinkItem = ({ href, path, children }) => {
   const active = path === href;
   const inactiveColor = useColorModeValue("gray", "white");
   return (
     <NextLink href={href}>
-      <Link
-        p={2}
-        bg={active ? "blue.500" : undefined}
-        color={active ? "blue" : inactiveColor}
-      >
-        {children}
-      </Link>
+      <Link p={4}>{children}</Link>
     </NextLink>
   );
 };
@@ -39,23 +29,35 @@ const Navbar = (props) => {
       position="fixed"
       as="nav"
       width="100%"
-      bg={useColorModeValue("gray", "white")}
-      style={{ backdropFilter: "blur(2px)" }}
+      bg={useColorModeValue("#865439", "#FCDEC0")}
       zIndex="1"
       {...props}
     >
       <Container
         display="flex"
-        p={2}
         maxW="container.md"
         wrap="wrap"
         align="center"
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-            <Logo />
-          </Heading>
+          <Logo />
+          <HStack spacing="5">
+            <LinkItem href="/about" path={path}>
+              Portfolio
+            </LinkItem>
+            <LinkItem href="/about" path={path}>
+              GitHub
+            </LinkItem>
+            <LinkItem href="/about" path={path}>
+              Contact me!
+            </LinkItem>
+          </HStack>
+          <IconButton
+              ml={200}
+              aria-label="theme-switch"
+              icon={useColorModeValue(<SunIcon />, <MoonIcon />)}
+            />
         </Flex>
       </Container>
     </Box>
