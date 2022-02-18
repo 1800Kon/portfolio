@@ -1,16 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Text, useColorModeValue } from "@chakra-ui/react";
+import { Text, useColorModeValue, Container, Box } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 
 const LogoBox = styled.span`
-  font-weight: bold;
-  font-size: 20px;
-  display: inline-flex;
-  align-items: center;
-  height: 50px;
-  line-height: 20px;
-  padding: 10px;
+  height: 100%;
 `;
 
 const Logo = () => {
@@ -21,18 +15,20 @@ const Logo = () => {
   )}.png`;
 
   return (
-    <Link href="/">
-      <a>
-        <LogoBox>
-          <Image
-            src={konLogo}
-            alt="Konstantin Boguev logo"
-            width="50"
-            height="50"
-          />
-        </LogoBox>
-      </a>
-    </Link>
+    <Box>
+      <Link href="/">
+        <a>
+          <LogoBox>
+            <Image
+              src={konLogo}
+              alt="Konstantin Boguev logo"
+              width="50"
+              height="50"
+            />
+          </LogoBox>
+        </a>
+      </Link>
+    </Box>
   );
 };
 
