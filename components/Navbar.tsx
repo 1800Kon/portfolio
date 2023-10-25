@@ -2,7 +2,7 @@ import { Box, Button, ButtonGroup, Center, Flex, Heading, Spacer } from "@chakra
 
 function Navbar() {
     return (
-        <Flex className="bg-slate-900" alignItems='center' gap='2'>
+        <Flex className="bg-blue-200" alignItems='center' gap='2'>
             <Box p='2'>
                 <Heading size='md'>Kon</Heading>
             </Box>
